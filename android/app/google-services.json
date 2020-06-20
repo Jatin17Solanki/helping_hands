@@ -1,0 +1,234 @@
+{
+  "project_info": {
+    "project_number": "275307212743",
+    "firebase_url": "https://yozznett-ee1ab.firebaseio.com",
+    "project_id": "yozznett-ee1ab",
+    "storage_bucket": "yozznett-ee1ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275307212743:android:cebfe73d2ac09ca136b3e2",
+        "android_client_info": {
+          "package_name": "com.hackgeek.helping_hands"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "275307212743-3u1f2gl6gckomrphi6fsal5jvd5obe7b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvonZpqQTWZgwBEDKFbsBDY_ivHYzQCes"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "275307212743-3u1f2gl6gckomrphi6fsal5jvd5obe7b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275307212743:android:be3e9ba02569ce8536b3e2",
+        "android_client_info": {
+          "package_name": "com.startup.yozznetbuisness"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "275307212743-138o6lprr0dodsfjqtr9614eu1sq8k6p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.startup.yozznetbuisness",
+            "certificate_hash": "d7074e0e6645e8ae9f1d69e6971c6f9e73d92c51"
+          }
+        },
+        {
+          "client_id": "275307212743-9geao389rnbtl8qrr8ajj8vipn92ab1h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.startup.yozznetbuisness",
+            "certificate_hash": "426bd163f83054ffe27617f4868ce86c91be0aa7"
+          }
+        },
+        {
+          "client_id": "275307212743-3u1f2gl6gckomrphi6fsal5jvd5obe7b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvonZpqQTWZgwBEDKFbsBDY_ivHYzQCes"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "275307212743-3u1f2gl6gckomrphi6fsal5jvd5obe7b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275307212743:android:a970095c1755aa9936b3e2",
+        "android_client_info": {
+          "package_name": "com.startup.yozznett"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "275307212743-bd9ktnc02mg612b0v74sup792djo58rb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.startup.yozznett",
+            "certificate_hash": "24dc1d659d2316759fca752798d823c7ef9a7dca"
+          }
+        },
+        {
+          "client_id": "275307212743-3isa2bbhs2utpdgp0lqk651noguev48j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.startup.yozznett",
+            "certificate_hash": "ef3100080d16ef8e0d4c98b0c36b7f1ab8375b12"
+          }
+        },
+        {
+          "client_id": "275307212743-lo9b4c4oe828qghdareagter20eemuie.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.startup.yozznett",
+            "certificate_hash": "f8c4774de81992cc4c1835ca3be455e1bc32193f"
+          }
+        },
+        {
+          "client_id": "275307212743-2781sh4ie455k6pk4tcivsiglc9nm59c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.startup.yozznett",
+            "certificate_hash": "f58b417175ddacf360b0faad2aa22446ed193390"
+          }
+        },
+        {
+          "client_id": "275307212743-phu1hjras124h3bm2h54mvs4o8ccskd7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.startup.yozznett",
+            "certificate_hash": "d6ec50ef2e22b32e6d6011873bdaf3ef37e8c6e5"
+          }
+        },
+        {
+          "client_id": "275307212743-pkt9k4jkpg0ebbdpgjphb66b0pf0dqs9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.startup.yozznett",
+            "certificate_hash": "5cabf7cbabb8de51d3bb3bbab23a120fc58fc30f"
+          }
+        },
+        {
+          "client_id": "275307212743-qcpr9m0bammqgbdf6s8i4akt7m51gmem.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.startup.yozznett",
+            "certificate_hash": "864db90c67cc747d2d02fc9fc82735ad63808a0b"
+          }
+        },
+        {
+          "client_id": "275307212743-snqs73f11h6j4f5i3il57f0gbeq55l83.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.startup.yozznett",
+            "certificate_hash": "de859bbec7420a1c27abb1cebe98d11a6ea0c2bc"
+          }
+        },
+        {
+          "client_id": "275307212743-rltr0mim78ptl3df51kbbtbrht8n1pf0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.startup.yozznett",
+            "certificate_hash": "0e488db689a7273cc87b91637332eacaa56797a8"
+          }
+        },
+        {
+          "client_id": "275307212743-fkmke12gs67rujd5cno5tbhgclaab793.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.startup.yozznett",
+            "certificate_hash": "eab8f4254c31f41e1cdd1a4257a2e3ea39e6b8dc"
+          }
+        },
+        {
+          "client_id": "275307212743-qp7eu8icoq9bgpllb7m07a9r39casqni.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.startup.yozznett",
+            "certificate_hash": "87ae684093c7e0ba7796b694f30915605ad691b0"
+          }
+        },
+        {
+          "client_id": "275307212743-b2e2d2nd6hnpdstju5l02t03bf9vlp3s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.startup.yozznett",
+            "certificate_hash": "d7074e0e6645e8ae9f1d69e6971c6f9e73d92c51"
+          }
+        },
+        {
+          "client_id": "275307212743-lt6vkah4b7i92ub4odfhpplnmhjq182h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.startup.yozznett",
+            "certificate_hash": "ed142cbc94d6695d650ea9907fef278d4c97a30a"
+          }
+        },
+        {
+          "client_id": "275307212743-gjqo4atrkvbh4vdsc2mpvmvlpvadqqp8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.startup.yozznett",
+            "certificate_hash": "3ee45c38ebbeb3e23f4f5c0aa71823f0a1e97aea"
+          }
+        },
+        {
+          "client_id": "275307212743-eds6sjr413dhsi33q4gufmqivh0mqhc8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.startup.yozznett",
+            "certificate_hash": "426bd163f83054ffe27617f4868ce86c91be0aa7"
+          }
+        },
+        {
+          "client_id": "275307212743-3u1f2gl6gckomrphi6fsal5jvd5obe7b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvonZpqQTWZgwBEDKFbsBDY_ivHYzQCes"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "275307212743-3u1f2gl6gckomrphi6fsal5jvd5obe7b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
