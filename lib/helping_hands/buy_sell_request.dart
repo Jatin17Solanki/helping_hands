@@ -25,14 +25,11 @@ class MyP2pPage extends StatefulWidget {
 class _MyP2pPageState extends State<MyP2pPage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-
   scrollToTop() {
     _scrollController.animateTo(_scrollController.position.minScrollExtent,
         duration: Duration(milliseconds: 1000), curve: Curves.easeIn);
     setState(() {});
   }
-
-
 
   CollectionReference userProfileCollection =
       Firestore.instance.collection('userProfile');
@@ -61,7 +58,6 @@ class _MyP2pPageState extends State<MyP2pPage> {
 //          getP2pData();
 ////          loadP2PList();
 //        }
-
 
         getP2pData();
       } else {
@@ -160,7 +156,7 @@ class _MyP2pPageState extends State<MyP2pPage> {
     Query query;
     if (giaTypeSelected == 'All') {
       query = p2pNetworkColRef
-          .where('userInstituteLocation', isEqualTo: this.userInstituteLocation)
+          //.where('userInstituteLocation', isEqualTo: this.userInstituteLocation)
           // .orderBy('userInstituteLocation', descending: true);
           .orderBy('serverTimeStamp', descending: true);
     } else if (giaTypeSelected == 'searchQuery') {
@@ -211,7 +207,7 @@ class _MyP2pPageState extends State<MyP2pPage> {
           querySnapshot.documents[querySnapshot.documents.length - 1];
     }
     products.addAll(querySnapshot.documents);
-    if(this.mounted){
+    if (this.mounted) {
       setState(() {
         isLoading = false;
       });
@@ -423,11 +419,7 @@ class _MyP2pPageState extends State<MyP2pPage> {
                               style: TextStyle(fontSize: 14.0)),
                         ),
                       ],
-                    )
-
-
-
-              ,
+                    ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -516,18 +508,16 @@ class _MyP2pPageState extends State<MyP2pPage> {
                     icon: Icon(Icons.call, color: Colors.white),
                     onPressed: () {
                       String userContactNo = doc.data['userContactNo'];
-                    if(userContactNo==''){
-                      final snackBar = SnackBar(content: Text('No contact number provided.'));
+                      if (userContactNo == '') {
+                        final snackBar = SnackBar(
+                            content: Text('No contact number provided.'));
 
 // Find the Scaffold in the widget tree and use it to show a SnackBar.
-                      _scaffoldKey.currentState.showSnackBar(snackBar);
+                        _scaffoldKey.currentState.showSnackBar(snackBar);
 //Scaffold.of(context).showSnackBar(snackBar);
-                    } else{
-                      launch("tel:$userContactNo");
-
-                    }
-
-
+                      } else {
+                        launch("tel:$userContactNo");
+                      }
                     },
                   ),
                 ),
@@ -659,8 +649,8 @@ class _MyP2pPageState extends State<MyP2pPage> {
                               userInstituteLocation,
                               overflow: TextOverflow.ellipsis,
                               maxLines: 1,
-                              style: TextStyle(
-                                  fontSize: 17.0, color: textColor),
+                              style:
+                                  TextStyle(fontSize: 17.0, color: textColor),
                             ),
                           ),
                         ),
@@ -776,7 +766,6 @@ class _MyP2pPageState extends State<MyP2pPage> {
       padding: const EdgeInsets.all(.0),
       child: Container(
         decoration: BoxDecoration(
-       
           borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0)),
         ),
         child: Container(
@@ -804,21 +793,15 @@ class _MyP2pPageState extends State<MyP2pPage> {
                 print('Snap length ${products.length}');
                 return buildP2pTemplate(docSnap);
               }
-
-
             },
           ),
         ),
-      
       ),
     );
   }
 
-  
-
   Widget _getAddIteamArea() {
     return ClipRRect(
-     
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 6.0),
         child: Card(
@@ -834,11 +817,8 @@ class _MyP2pPageState extends State<MyP2pPage> {
             // color: giaCardColor,
 
             decoration: BoxDecoration(
-              color:
-              
-                  Colors.teal.withOpacity(.7),
+              color: Colors.teal.withOpacity(.7),
               borderRadius: BorderRadius.circular(8),
-     
             ),
             child: Column(
               children: <Widget>[
@@ -852,7 +832,6 @@ class _MyP2pPageState extends State<MyP2pPage> {
                           SizedBox(
                             height: 5,
                           ),
-                 
                           Text(
                             'Peer to Peer Network',
                             style: GoogleFonts.lato(
@@ -874,7 +853,6 @@ class _MyP2pPageState extends State<MyP2pPage> {
                           SizedBox(
                             height: 8.0,
                           ),
-
                           Padding(
                             padding: const EdgeInsets.only(left: 12.0),
                             child: Text(
@@ -1545,11 +1523,9 @@ class _MyP2pPageState extends State<MyP2pPage> {
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.normal),
                       ),
-
                       TextSpan(
-                        text:  '\n\n- Senior help request\n\n'
-                          '- Blood donation request\n\n'
-                      ),
+                          text: '\n\n- Senior help request\n\n'
+                              '- Blood donation request\n\n'),
                       TextSpan(
                         text: " \n\n- Need someone to do your ",
                         style: TextStyle(
@@ -1786,12 +1762,11 @@ class _MyP2pPageState extends State<MyP2pPage> {
 //                        Container(),
 //                         Image.asset('assets/rupee.png')
 
-                    
-                         Image.network(
+                          Image.network(
                               'https://cdn3.iconfinder.com/data/icons/indian-rupee-symbol/800/Indian_Rupee_symbol.png',
 //                             'https://tse4.mm.bing.net/th?id=OIP.9oYa51bAuZmZyJ2CDiHfVgHaHa&pid=Api&P=0&w=300&h=300',
-                             // 'https://maxcdn.icons8.com/Share/icon/ultraviolet/Finance/rupee1600.png',
-                             fit: BoxFit.contain),
+                              // 'https://maxcdn.icons8.com/Share/icon/ultraviolet/Finance/rupee1600.png',
+                              fit: BoxFit.contain),
                     ),
                   ),
                   Padding(

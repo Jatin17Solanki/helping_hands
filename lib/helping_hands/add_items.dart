@@ -271,18 +271,16 @@ class _MyAddP2PItemPageState extends State<MyAddP2PItemPage> {
           setSearchParam(_giaItemNameController.text.toLowerCase()),
 
       //user's contact
-      'userId': user.uid,
+      //'userId': user.uid,
       'userName': this.userName,
       'userPhoneNo': this.userPhoneNo,
-      'userContactNo':
-          this.userContactNo
-              == '' ? '' : this.userContactNo,
-      'userInstituteLocation': this.userInstituteLocation,
+      'userContactNo': this.userContactNo == '' ? '' : this.userContactNo,
+      //'userInstituteLocation': this.userInstituteLocation,
       //user's contact
 
       'serverTimeStamp': FieldValue.serverTimestamp()
     }).then((_) {
-      if (fetchedUserName == '' || fetchedUserName == null) updateProfileData();
+      //if (fetchedUserName == '' || fetchedUserName == null) updateProfileData();
 
       Future.delayed(Duration(seconds: 2)).then((_) {
         setState(() {
@@ -447,17 +445,20 @@ class _MyAddP2PItemPageState extends State<MyAddP2PItemPage> {
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: FlatButton(
-                              child: Text('Tip', style: TextStyle(
-                                color: Colors.blue,
-                                fontStyle: FontStyle.italic),),
+                              child: Text(
+                                'Tip',
+                                style: TextStyle(
+                                    color: Colors.blue,
+                                    fontStyle: FontStyle.italic),
+                              ),
                               onPressed: () {
                                 myInfoBtmSheet.showInfoBtmShet(
-                                    context,
-                                    'Keep the item/request name short and precise.',
-                                        '\nThe \"first word\" will be used by others to search for your item/request.',
-                                        '\nThink what a person would search in the search bar while '
-                                            'looking for your item/request.',
-                                  );
+                                  context,
+                                  'Keep the item/request name short and precise.',
+                                  '\nThe \"first word\" will be used by others to search for your item/request.',
+                                  '\nThink what a person would search in the search bar while '
+                                      'looking for your item/request.',
+                                );
                               },
                             ),
                           ),
@@ -610,15 +611,14 @@ class _MyAddP2PItemPageState extends State<MyAddP2PItemPage> {
                                   InkWell(
                                       onTap: () {
                                         myInfoBtmSheet.showInfoBtmShet(
-                                          context,
-                                          'Uncomfortable sharing your phone no?',
-                                          "\nWe understand.\nWe are working on the chat feature!\n"
-                                          "\nFor now provide some form of contact like your email in the description.\n"
-                                              "\nJust kidding."
-                                              , "\nProvide your friend's contact(upon agreement) or "
-                                            "your Fb Messenger id, "
-                                            "Instagram id, etc."
-                                        );
+                                            context,
+                                            'Uncomfortable sharing your phone no?',
+                                            "\nWe understand.\nWe are working on the chat feature!\n"
+                                                "\nFor now provide some form of contact like your email in the description.\n"
+                                                "\nJust kidding.",
+                                            "\nProvide your friend's contact(upon agreement) or "
+                                                "your Fb Messenger id, "
+                                                "Instagram id, etc.");
                                       },
                                       child: Icon(Icons.help)),
                                 ],
