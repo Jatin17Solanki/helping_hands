@@ -488,7 +488,7 @@ class _MyP2pPageState extends State<MyP2pPage> {
                 padding:
                     const EdgeInsets.only(left: 14.0, right: 14, bottom: 8.0),
                 child: Container(
-                  color: Colors.teal,
+                  color: Colors.blueAccent,
                   width: double.infinity,
                   child: IconButton(
                     icon: Icon(Icons.call, color: Colors.white),
@@ -665,7 +665,7 @@ class _MyP2pPageState extends State<MyP2pPage> {
                     child: Text(
                       'Show p2p card',
                       style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.teal),
+                          fontWeight: FontWeight.bold, color: Colors.blueAccent),
                     ),
                   )),
             )
@@ -682,7 +682,7 @@ class _MyP2pPageState extends State<MyP2pPage> {
                     child: Text(
                       'Hide p2p card',
                       style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.teal),
+                          fontWeight: FontWeight.bold, color: Colors.blueAccent),
                     ),
                   )),
             ),
@@ -724,7 +724,7 @@ class _MyP2pPageState extends State<MyP2pPage> {
       ),
 
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.blueAccent,
         onPressed: () {
           setState(() {
             // fabBtnClicked = true;
@@ -795,7 +795,7 @@ class _MyP2pPageState extends State<MyP2pPage> {
             // color: giaCardColor,
 
             decoration: BoxDecoration(
-              color: Colors.teal.withOpacity(.7),
+              color: Colors.blueAccent.withOpacity(.85),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Column(
@@ -929,7 +929,7 @@ class _MyP2pPageState extends State<MyP2pPage> {
                         color:
                             // Colors.green,
                             Colors.white,
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(30),
                         // boxShadow: [BoxShadow(
                         //   color: Colors.grey,
                         //   blurRadius: 3,
@@ -945,7 +945,7 @@ class _MyP2pPageState extends State<MyP2pPage> {
                             'Add an Item',
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                color: Colors.teal,
+                                color: Colors.blueAccent,
                                 fontWeight: FontWeight.w700),
                           ),
                         ),
@@ -959,7 +959,7 @@ class _MyP2pPageState extends State<MyP2pPage> {
                       // width: 128,
                       decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(30),
                         // boxShadow: [BoxShadow(
                         //   color: Colors.grey,
                         //   blurRadius: 3,
@@ -974,7 +974,7 @@ class _MyP2pPageState extends State<MyP2pPage> {
                             'Make a Request',
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                color: Colors.teal,
+                                color: Colors.blueAccent,
                                 fontWeight: FontWeight.w700),
                           ),
                         ),
@@ -1095,7 +1095,7 @@ class _MyP2pPageState extends State<MyP2pPage> {
                 ),
                 backgroundColor:
                     giaTypeSelected == "Item Or Contribution Request"
-                        ? Colors.teal.withOpacity(.8)
+                        ? Colors.blueAccent.withOpacity(.8)
                         : Colors.grey[300],
                 // Colors.blueGrey[50],
               )),
@@ -1195,7 +1195,7 @@ class _MyP2pPageState extends State<MyP2pPage> {
                   : Colors.black),
         ),
         backgroundColor: giaTypeSelected == clickedGiaType
-            ? Colors.teal.withOpacity(.8)
+            ? Colors.blueAccent.withOpacity(.8)
             : Colors.grey[300],
         // Colors.blueGrey[50],
       ),
@@ -1329,9 +1329,10 @@ class _MyP2pPageState extends State<MyP2pPage> {
                         "Peer to Peer (p2p) Network.",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            color: Colors.teal,
+                            color: Colors.blueAccent,
                             fontSize: 20,
-                            fontWeight: FontWeight.w700),
+                            fontWeight: FontWeight.w700,
+                            ),
                       ),
                       SizedBox(
                         height: 10,

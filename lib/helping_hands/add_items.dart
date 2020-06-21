@@ -264,7 +264,7 @@ class _MyAddP2PItemPageState extends State<MyAddP2PItemPage> {
     return Scaffold(
         key: _scaffoldKey,
         appBar: AppBar(
-          backgroundColor: Colors.teal,
+          backgroundColor: Colors.blueAccent,
           title:
               Text(widget.itemType == 'Item' ? 'Add Item' : 'Make A Request'),
         ),
@@ -400,7 +400,7 @@ class _MyAddP2PItemPageState extends State<MyAddP2PItemPage> {
                               child: Text(
                                 'Tip',
                                 style: TextStyle(
-                                    color: Colors.blue,
+                                    color: Colors.blueAccent,
                                     fontStyle: FontStyle.italic),
                               ),
                               onPressed: () {
@@ -618,7 +618,7 @@ class _MyAddP2PItemPageState extends State<MyAddP2PItemPage> {
             isUploading
                 ? Center(child: CircularProgressIndicator())
                 : RaisedButton(
-                    color: Colors.teal,
+                    color: Colors.blueAccent,
                     child: Text(
                         widget.itemType == 'Item'
                             ? 'Post Item'
@@ -806,7 +806,7 @@ class _MyAddP2PItemPageState extends State<MyAddP2PItemPage> {
                       borderRadius: BorderRadius.circular(30),
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.blue.withOpacity(0.5), blurRadius: 10)
+                            color: Colors.blueAccent.withOpacity(0.5), blurRadius: 10)
                       ]),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -967,7 +967,7 @@ class _MyAddP2PItemPageState extends State<MyAddP2PItemPage> {
           backgroundColor:
               // requestSubType == requestTypeSelected
               requestSubType == requestTypeSelected
-                  ? Colors.teal.withOpacity(.8)
+                  ? Colors.blueAccent.withOpacity(.8)
                   : Colors.grey[300]),
     );
   }
