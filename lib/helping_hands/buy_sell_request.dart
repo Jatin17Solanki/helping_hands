@@ -155,10 +155,7 @@ class _MyP2pPageState extends State<MyP2pPage> {
     print('inside get products. GiaTypeSeleceted = ${this.giaTypeSelected}');
     Query query;
     if (giaTypeSelected == 'All') {
-      query = p2pNetworkColRef
-          //.where('userInstituteLocation', isEqualTo: this.userInstituteLocation)
-          // .orderBy('userInstituteLocation', descending: true);
-          .orderBy('serverTimeStamp', descending: true);
+      query = p2pNetworkColRef.orderBy('serverTimeStamp', descending: true);
     } else if (giaTypeSelected == 'searchQuery') {
       print('inside get products. GiaTypeSeleceted = ${this.giaTypeSelected}');
 //      if (!mounted) return;
@@ -182,17 +179,6 @@ class _MyP2pPageState extends State<MyP2pPage> {
           .startAfterDocument(lastDocument)
           .limit(documentLimit)
           .getDocuments();
-
-      // print('userInstituteLocation: ${this.userInstituteLocation}');
-      // querySnapshot = await firestore
-      //     .collection('p2pNetwork')
-      //     .where('userInstituteLocation', isEqualTo: this.userInstituteLocation)
-      //     // .orderBy('userInstituteLocation', descending: true)
-      //     .orderBy('serverTimeStamp', descending: true)
-      //     // .orderBy('userInstituteLocation')
-      //     // .startAfterDocument(lastDocument)
-      //     .limit(documentLimit)
-      //     .getDocuments();
 
       print(1);
     }
@@ -539,7 +525,7 @@ class _MyP2pPageState extends State<MyP2pPage> {
     // reloadP2PList();
     return StreamBuilder<QuerySnapshot>(
       stream: p2pNetworkColRef
-          .where('userInstituteLocation', isEqualTo: this.userInstituteLocation)
+          //.where('userInstituteLocation', isEqualTo: this.userInstituteLocation)
           .where('itemSearchQuery',
               arrayContains: enteredSearchQuery.toLowerCase())
           // .orderBy('itemSearchQuery')
@@ -717,14 +703,6 @@ class _MyP2pPageState extends State<MyP2pPage> {
 
       giaTypeSelected == 'searchQuery' ? loadSearchList() : loadP2PList(),
       SizedBox(height: 10)
-
-      // _buildLostAndFoundTemplate(),
-      // SizedBox(height: 7.0),
-      // _buildLostAndFoundTemplate(),
-      // SizedBox(height: 7.0),
-      // _buildLostAndFoundTemplate(),
-      // SizedBox(height: 7.0),
-      // _buildLostAndFoundTemplate(),
     ];
     return Scaffold(
       key: _scaffoldKey,
@@ -856,7 +834,7 @@ class _MyP2pPageState extends State<MyP2pPage> {
                           Padding(
                             padding: const EdgeInsets.only(left: 12.0),
                             child: Text(
-                              '•buy/sell/dontate items to your peers. ',
+                              '•buy/sell/donate items to your peers. ',
                               style: GoogleFonts.lato(
                                 color: Colors.white,
                                 textStyle: TextStyle(
@@ -1159,7 +1137,7 @@ class _MyP2pPageState extends State<MyP2pPage> {
     print('giaType clicked: $giaTypeSelected');
 
     return p2pNetworkColRef
-        .where('userInstituteLocation', isEqualTo: userInstituteLocation)
+        //.where('userInstituteLocation', isEqualTo: userInstituteLocation)
         .where(
           'itemType',
           isEqualTo: giaTypeSelected,

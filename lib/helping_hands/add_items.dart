@@ -90,52 +90,6 @@ class _MyAddP2PItemPageState extends State<MyAddP2PItemPage> {
 
   FirebaseUser user;
 
-  CollectionReference userProfileCollection =
-      Firestore.instance.collection('userProfile');
-
-  StreamSubscription<DocumentSnapshot> profileColSubscription;
-
-  loadProfileData(FirebaseUser user) async {
-    profileColSubscription = userProfileCollection
-        .document('${user.uid}')
-        .snapshots()
-        .listen((profileDataSnap) {
-      if (profileDataSnap.exists) {
-        print('profile data exists');
-        setState(() {
-          userNameController.text = this.userName =
-              profileDataSnap.data['userName'] == null
-                  ? ''
-                  : profileDataSnap['userName'];
-          this.fetchedUserName = userName;
-          debugPrint('Inside Gia Add Item Page -- name: $userName');
-          this.userInstituteLocation =
-              profileDataSnap.data['userInstituteLocation'];
-          phoneController.text =
-              this.userPhoneNo = profileDataSnap.data['userPhoneNo'];
-
-          this.userContactNo = this.userPhoneNo;
-
-          // nameController.text = this.name;
-        });
-      } else {
-        print('profile data does not exist');
-      }
-    });
-  }
-
-  void updateProfileData() {
-    userProfileCollection
-        .document('${user.uid}')
-        .updateData({'userName': userNameController.text}).then((_) {
-      print('profile data saved');
-      final snackBar = SnackBar(content: Text('Your data has been saved.'));
-      _scaffoldKey.currentState.showSnackBar(snackBar);
-    }).catchError((e) {
-      print(e.toString());
-    });
-  }
-
   String itemTypeSelected = '';
   @override
   void initState() {
@@ -154,7 +108,6 @@ class _MyAddP2PItemPageState extends State<MyAddP2PItemPage> {
             this.user = user;
             this.userPhoneNo = user.phoneNumber;
           });
-          loadProfileData(user);
         } else {
           print('user is $user');
         }
@@ -168,7 +121,6 @@ class _MyAddP2PItemPageState extends State<MyAddP2PItemPage> {
 
   @override
   void dispose() {
-    profileColSubscription?.cancel();
     phoneController?.dispose();
     userNameController?.dispose();
     _giaItemNameController?.dispose();
