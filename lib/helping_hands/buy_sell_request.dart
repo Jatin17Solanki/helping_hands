@@ -10,101 +10,24 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:url_launcher/url_launcher.dart';
-// import 'package:yozznett/pages/choose_institution_dropdown_page.dart';
 import 'add_items.dart';
 import 'done_tag.dart';
 import 'colors.dart';
 
-class MyP2pPage extends StatefulWidget {
+class BuySellRequest extends StatefulWidget {
   // final ScrollController scrollController;
-  MyP2pPage({Key key}) : super(key: key);
+  BuySellRequest({Key key}) : super(key: key);
   @override
-  _MyP2pPageState createState() => _MyP2pPageState();
+  _BuySellRequestState createState() => _BuySellRequestState();
 }
 
-class _MyP2pPageState extends State<MyP2pPage> {
+class _BuySellRequestState extends State<BuySellRequest> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   scrollToTop() {
     _scrollController.animateTo(_scrollController.position.minScrollExtent,
         duration: Duration(milliseconds: 1000), curve: Curves.easeIn);
     setState(() {});
-  }
-
-  CollectionReference userProfileCollection =
-      Firestore.instance.collection('userProfile');
-
-  StreamSubscription<DocumentSnapshot> profileColSubscription;
-
-  var userInstituteLocation;
-
-  loadProfileData(FirebaseUser user) async {
-    profileColSubscription = userProfileCollection
-        .document('${user.uid}')
-        .snapshots()
-        .listen((profileDataSnap) {
-      if (profileDataSnap.exists) {
-        print('profile data exists');
-        setState(() {
-          this.userInstituteLocation =
-              profileDataSnap.data['userInstituteLocation'];
-          print('userInsLoc from profile $userInstituteLocation');
-
-//          getP2pData();
-        });
-
-//        if(mounted){
-//          print('mounted $mounted');
-//          getP2pData();
-////          loadP2PList();
-//        }
-
-        getP2pData();
-      } else {
-        print('profile data does not exist');
-      }
-    });
-
-    //  await     getP2pData();
-  }
-
-  bool userProfileExists = false;
-  checkProfile() {
-    FirebaseAuth.instance.currentUser().then((user) {
-      if (user != null) {
-        debugPrint('user is not null, user is ${user.uid}');
-
-//check if user profile already exists
-        Firestore.instance
-            .collection('userProfile')
-            .document(user.uid)
-            .get()
-            .then((doc) {
-          if (doc.exists) {
-            debugPrint('profile exists while logging');
-            setState(() {
-              userProfileExists = true;
-            });
-          } else {
-            debugPrint('profile doesnt exist while logging');
-
-            Navigator.pop(context);
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(
-            //       builder: (context) => ChooseInstitutionDdPage(user)),
-            // );
-          }
-        }).catchError((e) {
-          print(e.toString());
-        });
-      } else {
-        debugPrint('user is null');
-        Navigator.pop(context);
-      }
-    }).catchError((e) {
-      print(e.toString());
-    });
   }
 
   // Firestore firestore = Firestore.instance;
@@ -205,22 +128,7 @@ class _MyP2pPageState extends State<MyP2pPage> {
   void initState() {
     super.initState();
     print('in 2nd init state');
-
-    userInstituteLocation = '';
-    try {
-      FirebaseAuth.instance.currentUser().then((onlineUser) {
-        setState(() {
-          print('user is ${onlineUser.uid}');
-        });
-
-        checkProfile();
-        loadProfileData(onlineUser);
-      }).catchError((e) {
-        print(e.toString());
-      });
-    } catch (e) {
-      print(e.toString());
-    }
+    reloadP2PList();
 
     _scrollController.addListener(() {
       double maxScroll = _scrollController.position.maxScrollExtent;
@@ -240,7 +148,6 @@ class _MyP2pPageState extends State<MyP2pPage> {
 
   @override
   void dispose() {
-    profileColSubscription?.cancel();
     searchItemController?.dispose();
     _scrollController?.dispose();
     super.dispose();
@@ -632,7 +539,7 @@ class _MyP2pPageState extends State<MyP2pPage> {
                           child: Padding(
                             padding: const EdgeInsets.only(right: 16.0),
                             child: Text(
-                              userInstituteLocation,
+                              "Ramaiah Institue of Technology",
                               overflow: TextOverflow.ellipsis,
                               maxLines: 1,
                               style:
@@ -663,9 +570,10 @@ class _MyP2pPageState extends State<MyP2pPage> {
                       });
                     },
                     child: Text(
-                      'Show p2p card',
+                      'Show card',
                       style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.blueAccent),
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blueAccent),
                     ),
                   )),
             )
@@ -680,9 +588,10 @@ class _MyP2pPageState extends State<MyP2pPage> {
                       });
                     },
                     child: Text(
-                      'Hide p2p card',
+                      'Hide card',
                       style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.blueAccent),
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blueAccent),
                     ),
                   )),
             ),
@@ -811,7 +720,7 @@ class _MyP2pPageState extends State<MyP2pPage> {
                             height: 5,
                           ),
                           Text(
-                            'Peer to Peer Network',
+                            'Be the helping Hands!',
                             style: GoogleFonts.lato(
                               textStyle: TextStyle(
                                   color: Colors.white,
@@ -1329,10 +1238,10 @@ class _MyP2pPageState extends State<MyP2pPage> {
                         "Peer to Peer (p2p) Network.",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            color: Colors.blueAccent,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w700,
-                            ),
+                          color: Colors.blueAccent,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                       SizedBox(
                         height: 10,
@@ -1552,7 +1461,7 @@ class _MyP2pPageState extends State<MyP2pPage> {
         elevation: 0.0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(
-            30.0,
+            10.0,
           ),
         ),
         child: Container(
